@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <!--relativo a adaptação do site para outras telas mobile / responsividade do site-->
+    <title> Casa & Lar </title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!--importando o CSS da fonte no Google fonts-->
+  </head>
+
+  <body class="body-event-sheet">
+    <header class="header-ficha-evento">
+      <h1 class="titulo-ficha-evento">Crie sua lista de presentes de Casamento!</h1>
+      <p class="p-ficha-evento">O primeiro passo, é preencher este formulário de inscrição.</br>Seguimos todo o protocolo de segurança previsto pela</br>LGPD (Lei Geral de Proteção de Dados), conosco seus dados estarão seguros.</p>
+      <div class="navHeader-EventSheet">
+        <nav class="navHeader">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="contato.html">Contatos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="page-event-sheet">
+      <form id="my-event-form"> <!--Id para conectar o form ao SUBMIT que ficou do lado de fora-->
+
+        <fieldsetEventSheet> <!--conjunto de campos Informações do Evento-->
+          <div class="fieldset-wrapper-event-sheet">
+            <legend>Informações do evento e de seu Administrador</legend>
+            
+            <div class="input-wrapper-event-sheet">
+              <label for="event-title">Título do evento <span>(mínimo 8 caracteres)</span></label>
+              <input type="text" id="event-title" name="event-title" placeholder="ex. Casamento da Ju e do Tel" required minlength="8"/>
+            </div>
+  
+
+            <div class="input-wrapper-event-sheet">
+              <label for="event-info">Recado aos convidados</label>
+              <textarea id="event-info" name="event-info" placeholder="ex. Sejam bem-vindos, é muito bom poder compartilhar esse momento com vocês.
+              Gratidão!"></textarea>
+            </div>
+
+            <div class="input-wrapper-event-sheet">
+              <label for="event-category">Traje</label>
+              <select id="event-category" name="event-category">
+                <option value="esporte">Esporte</option>
+                <option value="esporteFino">Esporte fino|Passeio</option>
+                <option value="social">Social|Passeio Completo</option>
+                <option value="black-tie">Black-tie</option>
+                <option value="gala">Gala|Rigor</option>
+                <option value="indeterminado">Indeterminado</option>
+              </select>
+            </div>
+  
+          </div>
+        </fieldset>
+
+        <fieldset> <!--conjunto de campos Privacidade-->
+          <div class="fieldset-wrapper-event-sheet">
+            <legend>Privacidade</legend>
+
+            <div class="input-wrapper-event-sheet">
+              <label for="event-nomeSobrenome">Nome e Sobrenome do administrador</label>
+              <input type="text" id="event-nomeSobrenome" name="event-nomeSobrenome" required minlength="8"/>
+            </div>
+
+            <div class="input-wrapper-event-sheet">
+              <label for="event-email">E-mail do administrador <span>(digite um email válido)</span></label>
+              <input type="email" id="event-email" name="event-email" required/>
+            </div>
+
+            <div class="input-wrapper-event-sheet">
+              <label for="event-whatsapp">Whatsapp para contato <span>(somente números)</span></label>
+              <input type="number" id="event-whatsapp" name="event-whatsapp" required/>
+            </div>
+
+            <div class="input-wrapper-event-sheet">
+              <label for="event-password">Senha de acesso para acompanhar a Lista <span>(mínimo 8 caracteres)</span></label>
+              <input type="password" id="event-password" name="event-password" required minlength="8"/>
+            </div>
+
+            <div class="checkbox-wrapper-event-sheet">
+              <input type="checkbox" id="notification-event-sheet" name="notification-event-sheet"/>
+              <label for="notification-event-sheet">Desejo ser notificado das compras</label>
+            </div>
+
+          </div>
+        </fieldset>
+
+        <fieldset> <!--conjunto de campos Dia e Hora-->
+          <div class="fieldset-wrapper-event-sheet">
+            <legend>Dia e Hora</legend>
+
+            <div class="col-3"> <!--criando um agrupamento conforme Layout-->
+              <div class="input-wrapper-event-sheet">
+                <label for="event-date">Data</label>
+                <input type="date" id="event-date" required/>
+              </div>
+  
+              <div class="input-wrapper-event-sheet">
+                <label for="event-begin">Das </label>
+                <input type="time" id="event-begin" required/>
+              </div>
+
+              <div class="input-wrapper-event-sheet">
+                <label for="event-end">Até </label>
+                <input type="time" id="event-end" required/>
+              </div>
+            </div>
+
+          </div>
+
+          <button type="submit" class="button-eventSheet" form="my-event-form">Salvar Evento e Fazer Lista</button>
+        </fieldset>
+      </form>
+
+      <footer class="footer-event-list">
+          <img id="mascoteLogoFooter" src="images/mascoteLogoFooter.png">
+          <p class="copyright">&copy; Copyright Casa & Lar (usamos a Loja Potiguar apenas como didática/demonstração)  - 2022</p>
+      </footer>
+
+    </div>
+    <script src="js/formEvent.js" type="module"></script>
+  </body>
+</html>

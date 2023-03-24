@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <!--relativo a adaptação do site para outras telas mobile / responsividade do site-->
+    <title> Casa & Lar </title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!--importando o CSS da fonte no Google fonts-->
+  </head>
+
+	<body class="chooseEvent-body">
+		<header id="headerEvento"> <!--Tag mais semântica para a div do cabeçalho da página-->
+			
+			<section class="laterais-top">
+				<div class="search">
+					<input id="input-search" type="text" placeholder="O que você procura?">
+					<button>Buscar</button>
+				</div>
+				
+				<a id="car" href=""><img id="carrinhoLogo"src="images/carrinhoLogo.png" alt="carrinho de compras"></a>
+			</section>
+
+			<div class="caixa">
+				<h1 id="tituloHeaderEvento">Casa & Lar <span>(isto é apenas um projeto)</span></h1>
+				</div>
+					<nav class="navHeader">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="produtos.html">Produtos</a></li>
+							<li><a href="contato.html">Contatos</a></li>
+						</ul>
+					</nav>
+		</header>
+
+		<div class="chooseEvent-container">
+      <main class="chooseEvent-card">
+        <div class="chooseEvent-form">
+          <h1 class="chooseEvent-title">Selecione seu Evento</h1>
+          
+          <div class="chooseEvent-input-wrapper">
+            <label for="chooseEvent-category">Categoria</label>
+            <select name="select-chooseEvent-category" id="select-chooseEvent-category">
+              <option value="casamento">Casamento</option>
+              <option value="chaCasa">Chá de Casa Nova</option>
+              <option value="chaBebe">Chá de bebê</option>
+            </select>
+          </div>
+
+          <div id="button-chooseEvent-category">
+            Personalizar Evento
+           <img src="./images/arrow.svg"
+           alt="Seta apontando para a direita">   
+          </div>
+        </div>
+      </main>
+    </div>
+
+		<footer>
+			<img id="mascoteLogoFooter" src="images/mascoteLogoFooter.png" alt="Logo da barbearia Alura">
+			<p class="copyright">&copy; Copyright Casa & Lar (usamos a Loja Potiguar apenas como didática/demonstração) </p>
+		</footer>
+    <script src="js/evento.js" type="module"></script>
+	</body>
+</html>

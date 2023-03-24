@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <!--relativo a adaptação do site para outras telas mobile / responsividade do site-->
+    <title> Casa & Lar </title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!--importando o CSS da fonte no Google fonts-->
+  </head>
+
+	<body>
+		<header> <!--Tag mais semântica para a div do cabeçalho da página-->
+			
+			<section class="laterais-top">
+				<div class="search">
+					<input id="input-search" type="text" placeholder="O que você procura?">
+					<button>Buscar</button>
+				</div>
+				
+				<a id="car" href=""><img id="carrinhoLogo"src="images/carrinhoLogo.png" alt="carrinho de compras"></a>
+			</section>
+
+			<div class="caixa">
+				<h1 id="tituloHeaderProdutos">Casa & Lar<span>(isto é apenas um projeto)</span></h1>
+				</div>
+					<nav class="navHeader">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="produtos.html">Produtos</a></li>
+							<li><a href="contato.html">Contatos</a></li>
+						</ul>
+					</nav>
+		</header>
+
+		<main id="mainContacts">
+			<form> <!--tag semântica da div formulário / todos os campos do form são elementos do tipo inline só ocupam o tamanho de seu conteúdo-->
+				<label for="nomesobrenome">Nome e sobrenome</label> <!--etiqueta da minha entrada de dados, nome do campo-->
+				<input type="text" id ="nomesobrenome" class="input-padrao" required> <!--entrada de dados, tem sempre um type-->
+
+				<label for="email">Email</label> <!--Todo input é único portanto possui id, este o relaciona com seu label: for="id"-->
+				<input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+
+				<label for="telefone">Telefone</label>
+				<input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX"> <!--required torna o campo obrigatório sob pena de não enviar o formulário sem seu preenchimento-->
+
+				<label for="mensagem">Mensagem</label>
+				<textarea cols="70" rows="10" id="mensagem" class="input-padrao" required></textarea> <!--Campo de Mensagem, não é <input>, não é simples entrada de texto. é uma tag de conteúdo, diferente da de texto, ela abre e fecha.-->
+
+				<fieldset> <!--tag pra configuração de um ou mais campos do formulário referentes a um mesmo assunto. Um grupo de campos relacionados-->
+					<legend>Como prefere o nosso contato?</legend> <!--tag de título de um fieldset, de um grupo de campos, ele não tem parágrafo e sim título-->
+
+					<label for="radio-email"><input type="radio" name="contato" value="email" id="radio-email">Email</label> <!--radio tem 'value' assim como submit-->
+					
+
+					<label for="radio-telefone"><input type="radio" name="contato" value="telefone" id="radio-telefone">Telefone</label> <!--o 'name' é para o radio quando um clica o outro des-clica, preciso criar uma unidade (agrupá-los), para só poder selecionar um.-->
+					
+
+					<label for="radio-whatsapp"><input type="radio" name="contato" value="whatsapp" id="radio-whatsapp" checked>Whatsapp</label> <!--ter colocado o input dentro do label faz com que a bolinha input venha antes do label / checked deixa essa marcada como sugestão-->
+					
+				</fieldset>
+
+				<fieldset> <!--tag pra configuração de um ou mais campos do formulário referentes a um mesmo assunto. Um grupo de campos relacionados-->
+					<legend>Qual horário prefere ser atendido?</legend> <!--tag de título de um fieldset, de um grupo de campos, ele não tem parágrafo e sim título-->
+					<select> <!--seletor não é input, tem tag própria, campo selecionável com as options do item-->
+						<option>Manhã</option>
+						<option>Tarde</option>
+						<option>Noite</option>
+					</select>
+				</fieldset>
+
+				<label class="checkbox"><input type="checkbox" checked>Gostaria de receber nossas novidades por email?</label> <!--criei o inpt dentro do label, já estão relacionados, não preciksei ligar pelo id / cheked está sugerindo que a pessoa marque ele-->
+
+				<input type="submit" value="Enviar Formulário" class="enviar"> <!--value coloca o nome desejado no submit, independente do nome padrão da lingua do usuário-->
+
+			</form>
+
+			<table> <!--tag de tabela-->
+				<thead> <!--tag de cabeçalho da tabela = para o(s) título(s) dela-->
+					<tr> <!--table row = linha-->
+						<th>Dia</th> <!--célula da linha (th porque está no head da tabela), com o conteúdo da célula / 1º coluna dessa linha-->
+						<th>Horário</th> <!--célula da linha (th porque está no head da tabela), com o conteúdo da célula / 2º coluna dessa linha-->
+					</tr>
+				</thead>
+				<tbody> <!--corpo da tabela-->
+					<tr>
+						<td>Segundas</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 1º coluna da segunda linha-->
+						<td>08h ~ 20h</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 2º coluna da segunda linha-->
+						
+					</tr>
+					<tr>
+						<td>Terças</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 1º coluna da segunda linha-->
+						<td>08h ~ 20h</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 2º coluna da segunda linha-->
+			
+					</tr>
+					<tr>
+						<td>Quartas</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 1º coluna da terceira linha-->
+						<td>08h ~ 20h</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 2º coluna da terceira linha-->
+					</tr>
+					<tr>
+						<td>Quintas</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 1º coluna da segunda linha-->
+						<td>08h ~ 20h</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 2º coluna da segunda linha-->
+						
+					</tr>
+					<tr>
+						<td>Sextas</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 1º coluna da quarta linha-->
+						<td>08h ~ 20h</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 2º coluna da quarta linha-->
+					</tr>
+					<tr>
+						<td>Sábados</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 1º coluna da quarta linha-->
+						<td>08h ~ 20h</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 2º coluna da quarta linha-->
+					</tr>
+					<tr>
+						<td>Domingos</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 1º coluna da quarta linha-->
+						<td>09h ~ 13h</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 2º coluna da quarta linha-->
+					</tr>
+					<tr>
+						<td>Feriados</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 1º coluna da segunda linha-->
+						<td>Podem afetar os horários</td> <!--célula da linha (td tag de célula para quem não está no head da tabela), com o conteúdo da célula / 2º coluna da segunda linha-->
+						
+					</tr>
+				</tbody>
+			</table>
+		</main>
+
+		<footer>
+			<img id="mascoteLogoFooter" src="images/mascoteLogoFooter.png" alt="Logo da barbearia Alura">
+			<p class="copyright">&copy; Copyright Casa & Lar (usamos a Loja Potiguar apenas como didática/demonstração) </p>
+
+		</footer>
+
+	</body>
+</html>

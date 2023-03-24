@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width">
+			<!--relativo a adaptação do site para outras telas mobile / responsividade do site-->
+			<title> Casa & Lar </title>
+			<link rel="stylesheet" href="css/reset.css">
+			<link rel="stylesheet" href="css/style.css">
+			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+			<!--importando o CSS da fonte no Google fonts-->
+		</head>
+		<body>
+			<header> <!--Tag mais semântica para a div do cabeçalho da página-->
+				
+				<section class="laterais-top">
+					<div class="search">
+						<input id="input-search" type="text" placeholder="O que você procura?">
+						<button id="button-search">Buscar</button>
+					</div>
+					
+					<a id="car" href=""><img id="carrinhoLogo"src="images/carrinhoLogo.png" alt="carrinho de compras"></a>
+				</section>
+
+				<div class="caixa">
+					<h1 id="tituloHeaderProdutos">Casa & Lar <span>(isto é apenas um projeto)</span></h1>
+					</div>
+						<nav class="navHeader">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="produtos.html">Produtos</a></li>
+								<li><a href="contato.html">Contatos</a></li>
+							</ul>
+						</nav>
+			</header>
+			
+			<main id="mainProducts"> <!--Tag mais semÂntica para a div do conteúdo principal da página HTML que está sendo produzida no momento-->
+				<section class="containerProducts">
+					<div class="wrapper-topProducts">
+						<div class="wrapper-categories">
+							<label for="product-categories">Todas as Categorias</label>
+							<select name="" id="product-categories">
+								<option value="">Selecione uma opção</option>
+								<option value="https://www.apotiguar.com.br/eletro-e-eletronicos">Eletro|Eletrônicos</option>
+								<option value="https://www.apotiguar.com.br/casa">Casa</option>
+								<option value="https://www.apotiguar.com.br/tintas-e-acessorios">Tintas e Acessórios</option>
+								<option value="https://www.apotiguar.com.br/portas-janelas-e-ferragens">Portas|Janelas|Ferragens</option>
+								<option value="https://www.apotiguar.com.br/materiais-hidraulicos-e-bombas">Materiais Hidráulicos e Bombas</option>
+								<option value="https://www.apotiguar.com.br/cama-mesa-e-banho">Cama|Mesa|Banho</option>
+								<option value="https://www.apotiguar.com.br/moveis-e-decoracoes">Móveis e Decorações</option>
+								<option value="https://www.apotiguar.com.br/banheiro-e-cozinha">Banheiro e Cozinha</option>
+								<option value="https://www.apotiguar.com.br/materiais-de-construcao">Materiais de Construção</option>
+								<option value="https://www.apotiguar.com.br/materiais-eletricos">Materiais Elétricos</option>
+								<option value="https://www.apotiguar.com.br/pisos-e-revestimentos">Pisos e Revestimentos</option>
+								<option value="https://www.apotiguar.com.br/utilidades-domesticas">Utilidades Domésticas</option>
+								<option value="https://www.apotiguar.com.br/iluminacao">Iluminação</option>
+								<option value="https://www.apotiguar.com.br/ferramentas-e-epis">Ferramentas e EPIs</option>
+							</select>
+						</div>
+						<div class="wrapper-bestSellers">
+							<p><a href="bestSellers.html">Mais vendidos</a></p>
+						</div>
+						<div class="wrapper-saleOff">
+							<p><a href="saleOff.html">Sale Off</a></p>
+						</div>
+						<div class="wrapper-order">
+							<p><a href="order.html">Acompanhe seu Pedido</a></p>
+						</div>
+						<div class="wrapper-swap">
+							<p><a href="swap.html">Troca e Devolução</a></p>
+						</div>
+						<div class="wrapper-eventList">
+							<p><a href="evento.html">Meu Evento - Faça sua Lista de Presentes</a></p>
+						</div>
+						<div class="wrapper-order">
+							<p><a href="order.html">Foi convidado para um Evento? - Lista de Presentes AQUI</a></p>
+						</div>
+				 	</div>
+					
+					<div class="products">
+						<div class="card card-paint">
+							<h2>Tintas e acessórios</h2>
+							<img src="images/tintasProdutos2.png">
+							<p class="product-description">Tintas e acessórios</p>
+						</div>
+		
+						<div class="card card-hidraulic">
+							<h2>Materiais hidráulicos</h2>
+							<img src="images/hidraulicaProdutos2.png">
+							<p class="product-description">Materiais hidráulicos</p>
+						</div>
+
+						<div class="card card-eletric">
+							<h2>Materiais Elétricos</h2>
+							<img src="images/eletricoProduto2.png">
+							<p class="product-description">Materiais Elétricos</p>
+						</div>
+				
+						<div class="card card-door">
+							<h2>Portas|Janelas</h2>
+							<img src="images/portasProdutos2.png">
+							<p class="product-description">Portas|Janelas</p>
+						</div>
+		
+						<div class="card card-home">
+							<h2>Casa</h2>
+							<img src="images/casaProdutos2.png">
+							<p class="product-description">Casa</p>
+						</div>
+		
+						<div class="card card-bathroom">
+							<h2>Cama|Mesa|Banho</h2>
+							<img src="images/camaProdutos2.png">
+							<p class="product-description">Cama, mesa e banho</p>
+						</div>
+
+						<div class="card card-decoration">
+							<h2>Móveis e Decoração</h2>
+							<img src="images/moveisProdutos2.png">
+							<p class="product-description">Móveis e Decoração</p>	
+						</div>
+
+						<div class="card card-electronics">
+							<h2>Eletro e eletônicos</h2>
+							<img src="images/eletroProdutos2.png">
+							<p class="product-description">Eletro e eletônicos</p>
+						</div>
+					</div>
+				</section>
+		</main>
+
+		<footer> <!--Tag mais semântica para a div que ficava o rodapé-->
+			<img id="mascoteLogoFooter" src="images/mascoteLogoFooter.png">
+			<p class="copyright">&copy; Copyright Casa & Lar (usamos a Loja Potiguar apenas como didática/demonstração)  - 2022</p> <!--símbolo do copyright tirado da tabela do UniCode (linguagem universal que serve para representarmos alguns símbolos. Ex: símbolo de gravação)-->
+		</footer>
+
+	</body>
+	  <script src="js/index.js" type="module"></script>
+</html>

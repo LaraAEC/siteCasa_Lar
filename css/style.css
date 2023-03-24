@@ -1,0 +1,990 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 62.5%;
+}
+
+.page {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+body {
+	font-size: 1.6rem;
+}
+
+body, #input-search, button {
+	font-family: 'Montserrat', sans-serif; /*aplicando em todo o corpo da página a fonte importada do Google fonte para nosso HTML*/
+}
+
+header { /*cabeçalho da página dentro do conteúdo do site, tag de conteúdo (head que é tag de estrututra)*/
+	background:whitesmoke;/*colocando a cor de fundo do cabeçalho:cinza*/
+	padding: 2rem 2rem; /*Dando um espaçamento no cabeçalho aumentando seus espaços cima/baixo. Aumenta o cabeçalho e deixa as coisas mais centralizadas. Tudo dentro dele fica dentro dos limites padding que determinei. Entre as margens e o conteúdo dele eu tenho esse espaçamento de 20 px. Não quero nada colado em suas margens.*/
+	position:relative;
+	width: 134rem;
+}
+
+span {
+	font-size: 2rem;
+	color: black;
+}
+
+.principal span, .mapa span {
+	font-size: 2rem;
+	color: black;
+}
+
+#headerHome{
+padding-bottom: 4.5rem;
+}
+
+.header-ficha-evento {
+	background: rgb(110, 23, 23);
+	height: 23rem;
+}
+
+#caixaHome{
+	margin:  0 auto; /*para centralizar a caixa na página web. Usamos espaço para cima e baixo zero, e, solicitamos que as margens esquerda e direita se calculem sozinhas automaticamente. Essa caixa estará sempre centralizada não imçporta o tamanho da tela (se minimizada ou maximizada)*/
+	display:flex;
+	
+	align-items: center;
+
+	margin-top: -8rem;
+	margin-bottom: -10rem;
+}
+
+.caixa {
+	margin:  0 auto; /*para centralizar a caixa na página web. Usamos espaço para cima e baixo zero, e, solicitamos que as margens esquerda e direita se calculem sozinhas automaticamente. Essa caixa estará sempre centralizada não imçporta o tamanho da tela (se minimizada ou maximizada)*/
+	display:flex;
+	
+	align-items: center;
+}
+
+h1{
+	font-weight: normal;
+	color: rgba(152, 25, 23, 0.728);
+	font-size: 16rem;
+
+	text-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.851);
+	animation: topdown 1s;
+}
+
+#tituloHeaderHome {
+	margin-bottom: 7rem;
+}
+
+#tituloHeaderProdutos, #tituloHeaderEvento {
+	font-weight: normal;
+	color: rgba(152, 25, 23, 0.728);
+	font-size: 15rem;
+	margin-bottom: 1rem;
+
+  text-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.851);
+
+  animation: topdown 1s;
+}
+
+.titulo-ficha-evento {
+	font-family: 'Archivo', sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  color: white;
+  margin-bottom: 24px;
+}
+
+.p-ficha-evento {
+	font-size: 16px;
+  line-height: 26px;
+
+  color: #42D3FF;
+}
+
+.laterais-top {
+	display: flex;
+	gap: 0.5rem;
+	justify-content:end;
+	margin-top: -1rem;
+}
+
+.search {
+  display: flex;
+	margin-top: 2rem;
+}
+
+.search #input-search {
+  height: 3rem;
+	width: 25rem;
+  border: 1px solid #ccc;
+  border-radius: .4rem 0 0 .4rem;
+  padding: 0 .8rem;
+}
+
+.search button {
+	color:white;
+	font-weight: 700;
+  height: 3rem;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 0 .4rem .4rem 0;
+
+  background-color: rgba(30, 98, 137, 0.871);
+
+  cursor: pointer;
+}
+
+.search button:hover {
+  filter: brightness(1.1);
+}
+
+#input-search{
+	height: 2.5rem;
+	border-radius: .4rem 0 0 .4rem;
+}
+
+#car{
+	text-decoration: none;
+
+	height: 3rem;
+  padding: 0.6rem;
+
+  border: none;
+  border-radius: .4rem;
+
+  background-color: rgba(30, 98, 137, 0.871);
+
+  cursor: pointer;
+
+	margin-top: 2rem;
+}
+
+#car:hover{
+	filter: brightness(1.1);
+}
+
+#carrinhoLogo{
+	width: 3.5rem;
+}
+
+.navHeader{
+	position: absolute; /*alterando o ponto inicial dele; não pode ser estático e nem relativo, posição do ponto inicial dele alterada para outro canto*/
+	top: 19rem; /*levando em conta a altura da imagem(240px), calculei onde seria, mais ou menos, o meio do menu navegação.*/
+	right: 2.5rem; /*O menu está absoluto porém levando em consideração à caixa, pois levantamos ela com position relative, e agora ele tem ela por base, e não mais o navegador. Assim fica DENTRO DA CAIXA SEMPRE EM QLQR TAMANHO DE TELA.*/
+}
+
+.navHeader li{ /*seletor de cada item da minha lista, de todos eles, apenas dos itens*/
+	display: inline; /*transformando cada item da lista, que por padrão de lista vem block, em inline*/
+	margin:  0 0 0 1rem; /*espaçamento externo para a esquerda (pois quero que o menu fique posicionado do lado direito) de 15px; para separar mais cada item da lista, o link está dentro do item li, não quero aumentar o conteúdo do item (link), quero espaçar os itens, por isso configuro o margin aqui e não no nav a.*/
+}
+
+.navHeader a { /*seletor de todos os links da minha navegação*/
+	text-transform: uppercase; /*colocando em maiúscula todas as letras dos links de navegação*/
+	color: rgb(152, 25, 23);
+	font-weight: bold; /*peso da fonte em negrito*/
+	font-size:  2.5rem; /*mudando o tamanho da minha fonte para maior*/
+	text-decoration: none; /*Tirando o sublinhado padrão que veio no link do navegador. Nenhuma decoração no meu texto tira isso*/
+}
+
+nav a:hover{
+	color: rgba(152, 25, 23, 0.544);
+	text-decoration: underline; 
+}
+
+main {
+	background: rgba(114, 145, 157, 0.33);
+	width: 134rem;
+}
+
+#mainProducts {
+	padding: 4rem;
+	width: 134rem;
+}
+
+#mainContacts {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	width: 134rem;
+}
+
+.wrapper-topProducts {
+	font-size: 1.8rem;
+
+	display: flex;
+	flex-direction: column;
+	gap: 5rem;
+
+	justify-self: center;
+	align-items:inherit;
+	padding: 2rem;
+
+	height: 100%;
+	background: #ccc;
+	border-radius: 1rem;
+}
+
+.wrapper-topProducts label {
+	color: rgba(21, 81, 116, 0.58);
+	font-weight: 600;
+}
+
+.wrapper-topProducts select {
+	color: rgb(91, 88, 88);
+	height: 1.5rem;
+	
+	border: none;
+	border-radius: .4rem;
+
+	margin-top: 0.5rem;
+
+	display: flex;
+}
+
+.wrapper-eventList p a, .wrapper-order p a, .wrapper-swap p a, .wrapper-saleOff p a, .wrapper-bestSellers p a{
+	color: rgba(21, 81, 116, 0.58);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+#product-categories{
+  background: #FAFAFC;
+
+  border: 1px solid #E6E6F0;
+  border-radius: 0.8rem;
+
+  height: 5rem;
+
+  padding: 0 2.4rem; /*espaçamento para que o texto a ser digitado no imput não comece colado na margem esquerda e nem termine colado na direita*/
+  
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+
+  color: #6c6a71;
+}
+
+.containerProducts{
+  display: flex;
+  gap: 8rem;
+}
+
+.card {
+	position: relative;
+}
+
+.card img { /*fazendo com que a imagem fique corresponente ao tamanho do cartão do layout*/
+	height: 25rem;
+	object-fit: cover;/*ideia de pegar o objeto imagem em si, vai considerar
+  a tag img como uma caixa e o source como o objeto*/
+ 
+  border-radius: 6px; /*deixamos em px mesmo, não causará grande diferemça, são 6px, mas são em um borda radio.*/
+  
+  transition: all 200ms; /*ajustando o transform e o opacity para não serem repentinos*/
+}
+
+.card img:hover {
+  transform:scale(1.1); /*mouse em cima escala aumenta*/
+  opacity: 0.5; /*mouse em cima opacidade é acionada escondendo um pouco a imagem dando ênfase ao texto*/
+}
+
+.products {
+	display: grid;
+	gap: 5rem;
+	
+	grid-template-columns: 1fr 1fr;
+	
+	grid-template-areas:
+	"A B"
+	"C D"
+	"E F"
+	"G H";
+
+	padding: 2rem;
+
+	height: 100%;
+	background: #ccc;
+	border-radius: 1rem;
+
+	justify-self: center;
+}
+
+.products div:nth-child(1) {
+	grid-area: A;
+}
+
+.products div:nth-child(2) {
+
+	grid-area: B;
+}
+
+.products div:nth-child(3) {
+	grid-area: C;
+}
+
+.products div:nth-child(4) {
+	grid-area: D;
+}
+
+.products div:nth-child(5) {
+	grid-area: E;
+}
+
+.products div:nth-child(6) {
+	grid-area: F;
+}
+.products div:nth-child(7) {
+	grid-area: G;
+}
+.products div:nth-child(8) {
+	grid-area: H;
+}
+
+.products h2 { /*ajustando a fonte dos títulos dos itens da lista ul de produtos*/
+	font-size: 30px;
+	font-weight:  bold;
+}
+
+.product-description { /*classe para ajustar a descrição do produto dentro do <P>*/
+	font-size: 18px;
+}
+
+.card h2 {
+  position: absolute;
+  top: 1rem;
+  
+  border-radius: 2rem;
+  font-weight: 500;
+  color: rgba(131, 16, 16, 0.841);
+
+  padding: 0 1rem;
+  width: fit-content;/*fit=encaixar. Encaixar no conteúdo(vai acompanhar o conteúdo dele). Pois ele estava se alargando quando aumentamos a letra do h2*/
+  
+  display: inline-flex;
+  align-items: center;
+
+	height:5rem;
+	background: whitesmoke;
+
+	margin-left: 0.6rem;
+}
+
+form {
+	padding: 2rem;
+}
+
+form label, form legend {
+	display: block; /*mudando a configuração padrão do campo de formulário (label e inputs) para ocuparem toda a tela, fazendo a quebra de linha, senão fica tudo um do lado do outro.*/
+	font-size: 20px; /*aumentando a fonte*/
+	margin: 0 0 10px; /*criando um espaço entre a label e o campo que vem logo abaixo dela. Margem abaixo de 10px.*/
+
+	color: rgb(165, 14, 14);
+	font-weight: 600;
+}
+
+.input-padrao{
+	display: block;
+	margin: 0 0 20px; /*margem para baixo*/
+	padding: 10px 25px; /*espaçamento interno 10px cima/baixo e 25px direita/esquerda*/
+	width: 50%; /*colocando o input para ocupar 50% da página*/
+
+	border: none;
+}
+
+.checkbox{
+	margin: 20px 0; /*margem para afaztar o checkbox dos itens acima e abaixo dele*/
+}
+
+.enviar{ /*colocando o style do meu botão submit, criamos a classe enviar para ele*/
+	width: 25%; /*aumentamos ele para que ocupe 40% da página*/
+	padding: 15px 0; /*mexendo no padding para dar um espaçamento interno entre as bordas e o texto. Demos cima/baixo de 15px,e, zero para as laterais pois não precisaram*/
+	background: rgba(152, 25, 23, 0.728); /*colocando um fundo laranja no nosso botão*/
+	color:  white; /*alterando a cor da fonte para branca para gerar um bom contraste com o fundo*/
+	font-weight: bold; /*colocando o texto do botão em negrito*/
+	font-size: 18px; /*aumentando a fonte do texto do nosso botão*/
+	border: none; /*retirando a borda padrãodo navegador que veio no botão do formulário*/
+	border-radius: 5px; /*colocando canto arredondado de 5px no nosso botão*/
+	transition: 1s all; /*transação visual do elemento: definindo o tempo em que será feita a transição de cor e escala do botão submit, por isso é all e não só backgraund  ou scale, são todas.*/
+	cursor: pointer; /*propriedade que altera o aspecto do cursor virando mão para indicar que é um elemento clicável*/
+}
+
+.enviar:hover{ /*quando o mouse está por cima do botão alterar seu comportamento*/
+	background: rgba(107, 12, 10, 0.728); /*alterando o fundo para laranja escuro quando o mouse está em cima do botão. Definimos o tempo de transição no próprio elemento que está sofrendo a modificação, no caso logo acima neste código na classe enviar.*/
+	transform: scale(1.1); /*Essa propriedade de escala/medida aumenta o elemento de modo, se quero aumentar em 20%, então coloco a escala de 1.2 (ele será multiplicado por 1.2).Essa propriedade aumenta o elemento como um todo, sem eu ter que calcular qual seria seu aumento de fonte, padding, margin, radio da borda...*/
+}
+
+table{ /*seletor da tabela - estilizando nossa tabela*/
+	margin: 0 auto;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+
+	color: white;
+	background: rgba(152, 25, 23, 0.728);
+}
+
+thead{ /*seletor do cabeçalho da tabela*/
+	background: rgba(152, 25, 23, 0.728);
+	color: white;
+	font-weight:  bold;
+
+}
+
+td,  th { /*seletor das células da nossa tabela, células do conteúdo e também do cabeçalho da tabela: <td> e <th>*/
+	border: 1px solid whitesmoke; /*criando uma borda para todos os itens da tabela*/
+	padding: 8px 15px; /*espaçamentos internos de cima/baixo 8px, e, lateral de 15px*/
+}
+
+footer{
+	width: 134rem;
+	text-align: center; /*centralizando todo o conteúdo do rodapé até o logo*/
+	background: whitesmoke;
+	padding: 1rem 0; /*espaçamento interno pra cima/baixo, para distanciar a imagem do inicio do rodapé, para dar uma configuração melhor*/
+}
+
+#mascoteLogoFooter {
+	opacity: 0.5;
+}
+
+.copyright{
+	color: rgba(21, 81, 116, 0.58);; /*alterando a cor padrão que veio na letra do texto do rodapé no navegador para branca*/
+	font-size: 13px; /*diminuindo a fonte do texto*/
+}
+
+
+/*css da página inicial*/
+.banner{
+	width: 100%; /*tamanho diferenciado por isso não entrou no main; colocamos ocupando 100% da página*/
+
+}
+.titulo-principal{ /*seletor de classe dada aos nossos títulos h2 e h3, sobre a Potiguar e benefícios em nosso main*/
+	text-align: center;
+	font-size: 2em; /*medida proporcional para pixels, 2 em, duas vezes o tamanho base da fonte.*/
+	color: rgb(152, 25, 23);
+	margin: 2em 0 1em; /*espaçamento para baixo proporcional ao tamanho da fonte, no caso 2x o da principal*/
+	clear: left; /*propriedade clear que limpa, e valor do que estou limpando que é o float: left; pois este,  usado na img utensilios, fez com que todos os elementos da página subissem para preencher os novos espaços, a partir daqui, do título de Benefícios para baixo. Com o clear ajeito isso colocano benefícios na linha logo abaixo da imagem.*/
+}
+
+.principal {
+	padding: 1em 0; /*colocamos o mesmo padding que está nos outros elementos etc*/
+	background: rgba(21, 81, 116, 0.007);
+	width:  940px;
+	margin: 0 auto;
+}
+
+.principal p { /*estilizando os parágrafos que estão na classe .principal (na parte de sobre a Potiguar)*/
+	margin:  0 0 1em; /*criando uma margem para baixo proporcional ao tamanho da fonte dos parágrafos*/
+	line-height: 3rem;
+}
+
+.principal strong{ /*seletor de onde tem strong na classe principal (a sobre a Potiguar)*/
+	font-weight: bold;
+}
+
+.principal em { /*seletor de onde tem ênfase na classe principal (a sobre a Potiguar)*/
+	font-style: italic;
+}
+
+.tinta { /*seletor da imagem da tinta azul*/
+	width: 12rem; /*diminuindo o tamanho da imagem para o que nós desejamos*/
+	float: left; /*colocando através dessa propriedade e valor o meu elemento imagem para flutuar ma página deixando sua sombra nela para ser rodeada pelo texto*/
+	margin: 0 20px 20px 0; /*definindo margens para a direita e para baixo da imagem para se adaptar melhor com o texto que a rodeia*/
+}
+
+.mapa { 
+	padding: 3em 0; /*espaçamento interno de 3em pra cima e pra baixo, proporcional ao tamanho da fonte do nosso site*/
+	background: linear-gradient(rgba(21, 81, 116, 0.007),rgba(46, 104, 138, 0.238)); /*transição de cor, degradê de cores*/
+}
+
+.mapa-conteudo { /*ajustando o tamanho do próprio mapa com a div que o envolve, colocando o mesmo tamanho da tela do cabeçalho*/
+	width: 80%;
+	margin: 0 auto; /*centralizando o mapa com margem lateral automática*/
+}
+
+.mapa p { /*seletor para ajustar o parágrafo que está dentro da classe mapa*/
+	margin: 0 0 2em; /*colocando um espaçamento externo de zero pra cima, zero pra direita e duas vezes proporcional ao tamanho da fonte para baixo*/
+	text-align: center; /*centralizando esse parágrafo*/
+}
+
+.beneficios {
+	padding: 3em 0; /*mesmo espaçamento interno que definimos no mapa*/
+	background: rgba(46, 104, 138, 0.238);	
+}
+
+.conteudo-beneficios { /*seletor da div com a classe conteudo-beneficios que engloba sua lista e imagem*/
+	width: 640px; /*definindo a largura*/
+	margin: 0 auto; /*centralizando todo esse conteúdo*/
+}
+
+.lista-beneficios {
+	width: 40%; /*largura de 40%, que completa 100% com os 60% da imagem-benefícios, que é o outro composto do conteúdo-beneficios*/
+	display: inline-block; /*mistura ambas as formas de exibição e consigo mexer no tamanho ajustando os 40 + os 60 e preenchedo os 100% de largura definida (640px).*/
+	vertical-align: top; /*alinhar os dois itens pela sua linha de cima e não de baixo (padrão)*/
+}
+
+.itens {
+	line-height: 1.5; /*Texto com espaçamento maior, para dar um distanciamento maior entre as linhas da lista: esta propriedade define a altura da linha, geralmente é do tamanho da fonte, mas estamos configurando aqui o tamanho da fonte mais 50% */
+}
+
+.itens:first-child { /*usando pseudo-class primeiro filho para mexer apenas no primeiro elemento da lista, tornando meu primeiro item em negrito*/
+	font-weight: bold;
+}
+
+.itens:before{ /*colocando uma estrela do unicode antes da minha classe itens através do pseudo-elemento :before*/
+	content: "🟊";
+}
+
+.imagem-beneficios {
+	width: 40%; /*largura de 60%, que completa 100% com os 40% da lista-benefícios, que é o outro composto do conteúdo-beneficios*/
+	opacity: 1; /*essa propriedade vai de 100%(1) a 0 (0), 1 é o máximo de visibilidade; aqui definimos o máximo de visibilidade*/
+	transition: 400ms; /*tempo de transição de 400 milissegundos de 100% para 30%*/
+	box-shadow: 10px 10px 10px 0 #000000; /*criando sombra na caixa da minha imagem, deslocando 10px no eixo X, 10px no eixo Y, de 10px o grau de trasncendência da cor para o transparente, 0 espalhamento/largura da sombra,  e definindo a cor da sombra de preta*/
+}
+
+.imagem-beneficios:hover{
+	opacity: 0.3; /*colocando uma opacidade para que seja visto apenas 30% da imagem quando o mouse estiver por cima*/
+}
+
+.video { /*ajustando o tamanho e centralizando o próprio video com sua div que lhe envolve justamente para ajustes do mesmo*/
+	width: 660px; /*mantendo a largura do prório video*/
+	margin: 2em auto; /*centralizando o video*/
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/*CSS da página Meu Evento*/
+#headerEvento {
+	padding-top: 3rem;
+}
+
+#tituloHeaderEvento {
+	margin-top: 4rem;
+	padding-bottom: 7rem;
+}
+.chooseEvent-body {
+  background-color: rgba(114, 145, 157, 0.33);
+}
+
+.chooseEvent-body, .chooseEvent-form-input, .chooseEvent-form-button {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.chooseEvent-container {
+  height: 100vh;
+
+  display: grid;
+  place-content: center;
+
+  padding: 1.6rem;
+}
+
+.chooseEvent-card {
+  background: white;
+
+  padding: 4.8rem 6.4rem 6.4rem;
+
+  max-width: 42.8rem;
+
+  margin-inline: auto;
+
+  box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.1);
+  border-radius: .6rem;
+}
+
+.chooseEvent-title {
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+.chooseEvent-form {
+  width: 30rem;
+}
+
+.chooseEvent-form h1{
+  margin-bottom: 3.2rem;
+}
+
+.chooseEvent-form label {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: #00453A;
+  margin-bottom: .8rem;
+  display:block; /*mudando para block pois o label tem display inline que não aceita margin-bottom*/
+}
+
+.chooseEvent-form input {
+  width: 100%; /*fez a quebra de linha*/
+  border: 1px solid rgba(73, 80, 87, 0.3);
+  background: #DCE2E9;
+  padding: 1.6rem;
+  border-radius: .4rem;
+}
+
+.chooseEvent-form input:focus {/*qndo o input estiver em foco, selecionado*/
+  outline: 2px solid #02799D;
+}
+
+.chooseEvent-form input::placeholder{ /*subclasse placeholder para mexer no placeholder*/
+  color: rgba(73, 80, 87, 0.5);
+}
+
+.chooseEvent-input-wrapper + .chooseEvent-input-wrapper { /*aplicar no input-wrapper que anterior a ele tenha um input-wrapper*/
+  margin-top: 1.6rem;
+}
+
+#button-chooseEvent-category {
+  margin-top: 3.2rem;
+  padding: 1.6rem;
+  width: 100%;
+
+  border-radius: .4rem;
+  border: none;
+
+  background-color: #02799D;
+  color: white;
+
+  display: flex; /*vai precisar desse display, alinhamento central das coisas*/
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: background .3s;
+}
+
+#button-chooseEvent-category:hover {
+  background: #02799db5;
+}
+
+.chooseEvent-input-wrapper {
+  display: flex; /*Preferimos colocar um elemento abaixo do outro utilizando o display flex.Porém poderia ter transformado o Label em block, ou o input colocado sua width 100%.*/
+  flex-direction: column; /*direcionamos nossos elementos em coluna através dessa propriedade disponível no flex. Como abordado acima*/
+}
+
+.chooseEvent-input-wrapper label,
+.chooseEvent-input-wrapper label span {
+  margin-left: 12px; /*afastando o span da label, são duas tags/elementos, portanto têm margem separando-as, posso mexer aqui para fazer o distanciamento previsto no Layout*/
+
+  font-size: 12px;
+  line-height: 20px;  
+
+  color: #a9a7af; /*é sempre necessário ativar o devtools no navegador para avaliar se o contraste está de acordo com a acessibiliddade, isto é se não está muito claro. No layout veio uma cor que não passou no teste, então criamos o hover para disponibilizar o texto em uma cor mais acessível.*/
+}
+
+.chooseEvent-input-wrapper label span:hover {
+  color: #6c6a71;
+}
+
+.chooseEvent-input-wrapper input,
+.chooseEvent-input-wrapper textarea,
+.chooseEvent-input-wrapper select {
+  background: #FAFAFC;
+
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+
+  height: 56px;
+
+  padding: 0 24px; /*espaçamento para que o texto a ser digitado no imput não comece colado na margem esquerda e nem termine colado na direita*/
+  
+  font-size: 16px;
+  line-height: 26px;
+
+  color: #6c6a71;/*é sempre necessário ativar o devtools no navegador para avaliar se o contraste está de acordo com a acessibiliddade, isto é se não está muito claro. No layout veio uma cor mto clara que não passou no teste, para não modificarmos aqui mesmo o tom. Resolvemos criar o hover p/ disponibilizar o texto em cor mais acessível.*/
+}
+
+.chooseEvent-input-wrapper select {
+  appearance:none; /*Verificar no site can I? se a propriedade já está disponibilizada para ser usada nos navegadores ou não. E verificar o prefixo se necessário.*/
+  -webkit-appearance:none; 
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right 24px top 50%; /*Verifica no Layout essa medida. Com o do top sai do top por 50% ficando ao meio, ou coloca center que fica no meio da altura*/
+}
+
+
+/*CSS da página Ficha de Cadastro do Evento*/
+.body-event-sheet{
+  margin: 0 auto;
+	background: rgba(114, 145, 157, 0.33);
+}
+
+.page-event-sheet {
+  width: 736px; 
+  margin: 0 auto; /*para alinhar ao meio da página*/
+	margin-top: 8rem;
+}
+
+.navHeader-EventSheet a {
+	color: white
+}
+
+.navHeader-EventSheet a:hover{
+	color: #42D3FF;
+	text-decoration: underline; 
+}
+
+#my-event-form {
+  margin-top: 38px;
+  background: #FAFAFC;
+  border-radius: 8px 8px 0 0; /*borda no formulário canto 1 e 2.*/
+  min-height: 300px; /*colocamos altura mínima para já ir olhando ele na tela*/
+  
+  padding: 64px; /*Nota-se um preenchimento lateral em todo o formulário no layout de 64px*/
+  display: flex;/*Transformando o form para flex para poder usar o gap 48px entre os fieldset que o compõe, da mesma forma que usou-se na div page dentro do fieldset para seus campos*/
+  flex-direction: column;
+  gap:48px
+}
+
+fieldsetEventSheet {
+  border: none; /*retirando bordas confing padrão do navegador*/
+}
+
+.fieldset-wrapper-event-sheet { /*Precisei criar mais esse wrapper para distanciar o legend do fieldset no HTML, para que o legend fosse considerado filho e eu pudesse gerar estas configurações*/
+  display: flex;/*aplicamos a ideia do flex para padronizar os espaços entre os campos, que estão de 24px no layout, com o gap*/
+  flex-direction: column; /*Alinhamos tudo como coluna em seu eixo principal, pois o flex desestabiliza iniciamente colocando um ao lado do outro.*/
+  gap: 24px; /*espaçamento entre os campos no layout*/
+}
+
+fieldsetEventSheet legend {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600; /*600 ou semi-bold*/
+  font-size: 24px;
+  line-height: 34px;
+
+  color: #32264D;
+
+  border-bottom: 1px solid #E6E6F0; /*colocamos a borda inferior (somente ela) à mostra para fazer linha de layout*/
+ /*percebemos que este elemento é block e portanto só colocamos sua largura em 100% para a 'linha' ocupar todo o formulário conforme layout*/
+  padding-bottom: 16px; /*distanciando da linha no tamanho definido no layout*/
+	padding-top: 16px;
+}
+
+.input-wrapper {
+  display: flex; /*Preferimos colocar um elemento abaixo do outro utilizando o display flex.Porém poderia ter transformado o Label em block, ou o input colocado sua width 100%.*/
+  flex-direction: column; /*direcionamos nossos elementos em coluna através dessa propriedade disponível no flex. Como abordado acima*/
+}
+
+.input-wrapper-event-sheet label,
+.checkbox-wrapper-event-sheet label {
+  font-size: 14px;
+  line-height: 24px;
+
+  color: #4E4958;
+
+  margin-bottom: 8px;
+}
+
+.input-wrapper-event-sheet label span {
+  margin-left: 12px; /*afastando o span da label, são duas tags/elementos, portanto têm margem separando-as, posso mexer aqui para fazer o distanciamento previsto no Layout*/
+
+  font-size: 12px;
+  line-height: 20px;  
+
+  color: #a9a7af; /*é sempre necessário ativar o devtools no navegador para avaliar se o contraste está de acordo com a acessibiliddade, isto é se não está muito claro. No layout veio uma cor que não passou no teste, então criamos o hover para disponibilizar o texto em uma cor mais acessível.*/
+}
+
+.input-wrapper-event-sheet label span:hover {
+  color: #6c6a71;
+}
+
+.input-wrapper-event-sheet input,
+.input-wrapper-event-sheet textarea,
+.input-wrapper-event-sheet select {
+  background: #FAFAFC;
+
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+
+  height: 56px;
+	width: 100%;
+
+  padding: 0 24px; /*espaçamento para que o texto a ser digitado no imput não comece colado na margem esquerda e nem termine colado na direita*/
+  
+  font-size: 16px;
+  line-height: 26px;
+
+  color: #6c6a71;/*é sempre necessário ativar o devtools no navegador para avaliar se o contraste está de acordo com a acessibiliddade, isto é se não está muito claro. No layout veio uma cor mto clara que não passou no teste, para não modificarmos aqui mesmo o tom. Resolvemos criar o hover p/ disponibilizar o texto em cor mais acessível.*/
+}
+
+input:invalid { /*PSEUDO CLASSE do tipo inválido, serve pra ver o estado do seu elemento */
+  border: 1px solid #FF1010
+}
+
+.input-wrapper-event-sheet textarea {
+  padding: 0;
+  height:168px;
+}
+
+.input-wrapper-event-sheet select {
+  appearance:none; /*Verificar no site can I? se a propriedade já está disponibilizada para ser usada nos navegadores ou não. E verificar o prefixo se necessário.*/
+  -webkit-appearance:none; 
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right 24px top 50%; /*Verifica no Layout essa medida. Com o do top sai do top por 50% ficando ao meio, ou coloca center que fica no meio da altura*/
+}
+
+.col-3 {
+  display: flex;
+  gap: 20px;
+  
+}
+.col-3 > div:nth-child(1) { /*da classe col-3 quero das filhas diretas a número 1, a primeira.*/
+  width: 100%; /*para ficar maior ocupando o que puder conforme layout, completando pra ocupar todo o espaço disponível do form pra eles na largura*/
+} 
+
+.checkbox-wrapper-event-sheet {
+  position:relative; /*relativisando a posição absoluta do checkbox-wrapper input 'verdadeiro'*/
+}
+
+/*Antes aqui havia a classe .checkbox-wrapper {configurando o idsplay flex para o input e o label, e um align-itens 
+  enter. Porém como sumi com o input para fazer um mais estilizado dentro da própria tag LABEL, não fez mais sentido
+  esta configuração que envolvia o real input antigo. Veja em .checkbox wrapper laber toda a configuração da caixinha
+  e sua etiqueta.}*/
+.checkbox-wrapper-event-sheet label {
+  margin: 0; /*retirando a margin-bottom: 8px (está desalinhando o label e a caixinha) que recebeu quando coloquei ele junto com as configurações do input-wrapper label, por serem muito similares e só divergirem nessa margem. */
+  display:flex; /*O que importa agora é o Label, pois estou colocando tudo dentro dele, a caixinha está junto com a etiqueta, não há mais a vizualisação do input*/
+  align-items: center;
+  gap: 16px; /*espaço lateral no label, entre a caixinha e a etiqueta*/
+}
+
+/*sumir com ele, através do 'display:none;' gerou um problema de acessibilidade, gerou problema para a navegação
+com o TAB e para o leitor de tela*/
+.checkbox-wrapper-event-sheet input { 
+  position: absolute; /*colocando o input em posição absoluta relativo somente ao próprio checkbox*/
+  top: 0;
+  left: 0;
+
+  width: 24px;
+  height: 24px;
+
+  opacity: 0; /*deixando o input verdadeiro invisível*/
+}
+
+.checkbox-wrapper-event-sheet label::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+
+}
+
+/*Quando eu tiver um checked em meu input, eu vou pegar o label
+e o seu before e fazer alguma alteração com ele. E funciona pois
+com a conexão do input e do label através do ID, qaundoclico no label aciona o input também.*/
+.checkbox-wrapper-event-sheet input:checked + label::before{
+  background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='24' height='24' rx='8' fill='%23FAFAFC' stroke='%23E6E6F0'/%3E%3Cpath d='M10 17.17L5.83 13L4.41 14.41L10 20L22 8L20.59 6.59L10 17.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+  /*click botão direito na imagem dsejada -> copy/past -> copy as SVG -> base64*/
+}
+
+/*Quando o input desse .checkbox-wrapper estiver em foco (usando aqui a pseudoclasse :focus),
+verifica se está em foco e se tiver pego o 'label::before' e crio o outline. Assim coloco este
+input estilizado em foco quando o TAB estiver nele.*/
+.checkbox-wrapper-event-sheet input:focus + label::before {
+  outline: 2px solid black;
+}
+
+.button-eventSheet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  padding: 12px; /*centralizando o conteúdo salvar do botão cima/baixo*/
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+
+  height: 56px;
+  width: 100%; /*fazendo o botão esticar para os lados 100% do footer*/
+
+  background: #F67669;
+  border-radius: 8px;
+  
+  border: 0; /*retirando a borda padrão preta que vem no btn no navegador*/
+
+  font-family: 'Staatliches';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.footer-event-list {
+	width: 100%;
+}
+
+
+
+/*Adaptação do site para mobile e celulares - telas de até 480px de largura de 'tela' mesmo, da quantida de pixels por
+ polegada da tela que difere da resolução da tela que Às vezes é bem maior.*/
+@media screen and (max-width: 480px) { /*telas que tenham até no máximo 480px de largura seguirão o estilo aqui definido*/
+	.caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video, .laterais-top {
+		width: auto;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	.lista-beneficios, .imagem-beneficios{
+		width: 25rem;
+	}
+
+	.lista-beneficios{
+		margin-left: 18rem;
+	}
+
+	.products {
+		width: auto;
+	}
+
+	.enviar {
+		font-size: calc(18px - 20%);
+	}
+
+	footer{
+		text-align: center; /*centralizando todo o conteúdo do rodapé até o logo*/
+		background: rgba(152, 25, 23, 0.728);
+		padding: 10px 0; /*espaçamento interno pra cima/baixo, para distanciar a imagem do inicio do rodapé, para dar uma configuração melhor*/
+	}
+	
+	.copyright{
+		color: #FFFFFF; /*alterando a cor padrão que veio na letra do texto do rodapé no navegador para branca*/
+		font-size: 13px; /*diminuindo a fonte do texto*/
+	}
+
+}
+
+/*Adaptação do site para telas iguais ou maiores de 1000px. */
+@media screen and (min-width: 1000px) { 
+	main, header, footer, .principal, #mainProducts, #mainContacts {
+		width: 100%;
+	}
+	.wrapper-topProducts {
+		margin-left: 500px;
+	}
+
+	form {
+		width: 124rem;
+		margin-left: 600px; 
+	}
+}
+
+
